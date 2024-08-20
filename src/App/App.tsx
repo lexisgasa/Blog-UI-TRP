@@ -1,4 +1,4 @@
-import NavMenu from "../components/NavMenu";
+import NavMenu from "../components/NavMenu/NavMenu";
 
 const App = (): React.ReactElement => {
   return (
