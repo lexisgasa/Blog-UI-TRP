@@ -6,7 +6,7 @@ const App = (): React.ReactElement => {
   return (
     <div className="container">
       <Header />
-      <Card title="La pequeña araña de 8 patas" />
+      <Card title="The litle spier with 8 legs" />
     </div>
   );
 };
