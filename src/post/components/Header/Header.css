@@ -1,0 +1,15 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (width <= 600px) {
+    min-height: 70px;
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+.main-title {
+  text-transform: uppercase;
+}
