@@ -9,7 +9,7 @@ const App = (): React.ReactElement => {
   return (
     <div className="container">
       <Header />
-      <Card title="The litle spier with 8 legs" />
+      <Card title="The litle spider with 8 legs" />
     </div>
   );
 };
