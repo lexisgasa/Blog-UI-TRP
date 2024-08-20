@@ -1,3 +1,17 @@
+.main-header {
+  display: flex;
+  border-bottom: 3px solid var(--main-color);
+  justify-content: space-between;
+  align-items: center;
+
+  @media (width <= 600px) {
+    min-height: 70px;
+    flex-direction: column;
+    border-bottom: 3px solid var(--main-color);
+    display: flex;
+  }
+}
+
 .main-title {
   text-transform: uppercase;
 }
