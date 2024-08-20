@@ -1,9 +1,0 @@
-.navigation-links {
-  display: flex;
-  gap: 16px;
-}
-
-.navigation-links__link--active {
-  color: var(--main-color);
-  border-bottom: 1px solid var(--main-color);
-}
