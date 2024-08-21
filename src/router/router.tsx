@@ -3,9 +3,9 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import App from "../post/components/App/App";
+import App from "../App/App";
 import PostsListPage from "../post/pages/PostsListPage/PostsListPage";
-import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
