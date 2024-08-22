@@ -3,7 +3,7 @@ import "./PostsListPage.css";
 export const PostsListPage = (): React.ReactElement => {
   return (
     <>
-      <h2 className="post-list">Post List</h2>
+      <h2 className="post-list">Posts List</h2>
     </>
   );
 };
