@@ -5,6 +5,9 @@ import PostsList from "./PostsList";
 describe("Given the PostsList component", () => {
   describe("When it receives two posts with the title 'hola buenas' and 'hasta luego cocodrilo'", () => {
     test("Then it should show 'hola buenas' and 'hasta luego cocodrilo' inside headings", () => {
+      const firstPostTitleText = "hola buenas";
+      const secondPostTitleText = "hasta luego cocodrilo";
+
       const posts: Post[] = [
         {
           id: "",
@@ -21,17 +24,18 @@ describe("Given the PostsList component", () => {
           content: "",
         },
       ];
+
       render(<PostsList posts={posts} />);
 
       const firstPostTitle = screen.getByRole("heading", {
-        name: "hola buenas",
+        name: firstPostTitleText,
       });
-      const secoondPostTitle = screen.getByRole("heading", {
-        name: "hasta luego cocodrilo",
+      const secondPostTitle = screen.getByRole("heading", {
+        name: secondPostTitleText,
       });
 
       expect(firstPostTitle).toBeInTheDocument();
-      expect(secoondPostTitle).toBeInTheDocument();
+      expect(secondPostTitle).toBeInTheDocument();
     });
   });
 });
