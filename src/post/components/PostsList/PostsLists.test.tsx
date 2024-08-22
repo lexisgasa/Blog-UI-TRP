@@ -10,14 +10,14 @@ describe("Given the PostsList component", () => {
 
       const posts: Post[] = [
         {
-          id: "",
+          id: "1",
           title: "hola buenas",
           author: "",
           date: new Date(),
           content: "",
         },
         {
-          id: "",
+          id: "2",
           title: "hasta luego cocodrilo",
           author: "",
           date: new Date(),
