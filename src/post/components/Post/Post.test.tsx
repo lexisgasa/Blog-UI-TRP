@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Card from "./Card";
+import Post from "./Post";
 
 describe("Given the Card component", () => {
   describe("When it receives a post with title 'The litle spider with 8 legs'", () => {
@@ -7,7 +7,7 @@ describe("Given the Card component", () => {
       const postTitle = "The litle spider with 8 legs";
       const postTitleRegexp = new RegExp(postTitle, "i");
 
-      render(<Card title={postTitle} />);
+      render(<Post title={postTitle} />);
 
       const postTitleElement = screen.getByRole("heading", {
         name: postTitleRegexp,
