@@ -3,7 +3,7 @@ import NotFoundPage from "./NotFoundPage";
 
 describe("Given the NotFoundPage component", () => {
   describe("When it is rendered", () => {
-    test("It should show the message 'Oops... this page doesn't exist'", () => {
+    test("Then it should show the message 'Oops... this page doesn't exist'", () => {
       render(<NotFoundPage />);
 
       const errorMessage = screen.getByText("Oops... this page doesn't exist");
