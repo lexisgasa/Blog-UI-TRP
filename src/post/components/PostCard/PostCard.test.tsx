@@ -10,7 +10,7 @@ describe("Given the Card component", () => {
         id: "",
         author: "",
         content: "",
-        date: "",
+        date: new Date(),
         title: postTitle,
       };
 
