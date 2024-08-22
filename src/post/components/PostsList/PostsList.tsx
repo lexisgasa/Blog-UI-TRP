@@ -10,7 +10,7 @@ const PostsList = ({ posts }: PostListProps): React.ReactElement => {
     <ul>
       {posts.map((post) => {
         return (
-          <li>
+          <li key={post.id}>
             <PostCard post={post} />
           </li>
         );

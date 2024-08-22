@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PostsList from "../../components/PostsList/PostsList";
 import "./PostsListPage.css";
 import { Post } from "../../types";
+import getPosts from "../../api/getPosts";
 
 export const PostsListPage = (): React.ReactElement => {
-  const [posts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const apiPosts = await getPosts();
+      setPosts(apiPosts);
+    };
+
+    fetchPosts();
+  }, []);
 
   return (
     <>
