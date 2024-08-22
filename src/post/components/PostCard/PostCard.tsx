@@ -1,18 +1,13 @@
-import "./Post.css";
+import type { Post as PostCard } from "../../types";
+import "./PostCard.css";
 
-interface PostProps {
-  title: string;
-  author: string;
-  content: string;
-  date: string;
+interface PostCardProps {
+  post: PostCard;
 }
 
-const Post = ({
-  title,
-  author,
-  content,
-  date,
-}: PostProps): React.ReactElement => {
+const PostCard = ({
+  post: { author, content, date, title },
+}: PostCardProps): React.ReactElement => {
   return (
     <li>
       <article className="post">
@@ -27,4 +22,4 @@ const Post = ({
   );
 };
 
-export default Post;
+export default PostCard;
