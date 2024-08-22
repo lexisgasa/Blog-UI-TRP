@@ -7,7 +7,7 @@ describe("Given the Card component", () => {
       const postTitle = "The litle spider with 8 legs";
       const postTitleRegexp = new RegExp(postTitle, "i");
 
-      render(<Post title={postTitle} />);
+      render(<Post title={postTitle} content="" author="" date="" />);
 
       const postTitleElement = screen.getByRole("heading", {
         name: postTitleRegexp,
