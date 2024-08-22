@@ -5,7 +5,7 @@ interface PostListProps {
   posts: Post[];
 }
 
-export const PostsList = ({ posts }: PostListProps): React.ReactElement => {
+const PostsList = ({ posts }: PostListProps): React.ReactElement => {
   return (
     <ul>
       {posts.map((post) => {
