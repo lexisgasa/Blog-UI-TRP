@@ -3,7 +3,7 @@ import PostsListPage from "./PostsListPage";
 
 describe("Given the PostsListPage component", () => {
   describe("When it is rendered", () => {
-    test("Then it should show Posts List text", () => {
+    test("Then it should show 'Posts List' inside a heading", () => {
       const headingText = "Post List";
       render(<PostsListPage />);
 
