@@ -2,6 +2,9 @@ name: Testing
 
 on: push
 
+env:
+  VITE_API_URL: https://w6-blog-trp-back.onrender.com/
+
 jobs:
   test:
     name: Tests passes
