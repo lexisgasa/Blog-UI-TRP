@@ -5,12 +5,6 @@
   position: relative;
 }
 
-.post__author {
-  position: absolute;
-  top: 0;
-  left: 35px;
-}
-
 .post__container {
   border: 1px solid black;
   border-radius: 25px;
