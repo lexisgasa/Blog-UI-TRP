@@ -1,11 +1,8 @@
 .post {
   padding: 15px;
   max-width: 100%;
+  height: auto;
   position: relative;
-
-  @media (width >= 600px) {
-    max-width: 70%;
-  }
 }
 
 .post__author {
@@ -22,10 +19,25 @@
 }
 
 .post__title {
+  padding: 15px 0;
   font-size: 1.2rem;
 }
 
 .post__date {
   position: absolute;
   right: 20px;
+}
+
+.post__image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.post__content {
+  padding: 15px 0;
+  max-width: 200ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
