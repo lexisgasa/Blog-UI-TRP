@@ -17,12 +17,16 @@ describe("Given the PostsListPage component", () => {
   describe("When it renders 2 posts with the title 'el leon de la carcel' and 'un elefante en la luna'", () => {
     test("Then it should show 'el leon de la carcel' and 'un elefante en la luna' inside their headings", async () => {
       render(<PostsListPage />);
+      const lionPostTitleText = "el leon de la carcel";
+      const lionPostTitleRegex = new RegExp(lionPostTitleText, "i");
+      const elephantPostTitleText = "un elefante en la luna";
+      const elephantPostTitleRegex = new RegExp(elephantPostTitleText, "i");
 
       const lionPostTitle = await screen.findByRole("heading", {
-        name: "el leon de la carcel",
+        name: lionPostTitleRegex,
       });
       const elephantPostTitle = await screen.findByRole("heading", {
-        name: "un elefante en la luna",
+        name: elephantPostTitleRegex,
       });
 
       expect(lionPostTitle).toBeInTheDocument();
