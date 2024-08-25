@@ -44,3 +44,11 @@ a {
 p {
   margin: 0;
 }
+
+button {
+  margin: 0;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
