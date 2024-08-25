@@ -16,6 +16,8 @@ const PostCard = ({
         <img
           className="post__image"
           src={imageUrl}
+          srcSet={`${imageUrl} "300w"`}
+          sizes={`${imageUrl} "50vw"`}
           alt={alternativeText}
           width={300}
           height={300}
