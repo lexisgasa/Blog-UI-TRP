@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import PostsList from "../../components/PostsList/PostsList";
 import { Post } from "../../types";
 import { PostClient } from "../../api/postClient/postClient";
 import "./PostsListPage.css";
 
 export const PostsListPage = (): React.ReactElement => {
-  const postClient = new PostClient();
+  const postClient = useMemo(() => new PostClient(), []);
 
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -16,7 +16,7 @@ export const PostsListPage = (): React.ReactElement => {
     };
 
     fetchPosts();
-  }, []);
+  }, [postClient]);
 
   return (
     <>
