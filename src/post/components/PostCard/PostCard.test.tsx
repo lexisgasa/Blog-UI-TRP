@@ -12,6 +12,8 @@ describe("Given the Card component", () => {
         content: "",
         date: new Date(),
         title: postTitle,
+        alternativeText: "",
+        imageUrl: "",
       };
 
       const postTitleRegexp = new RegExp(postTitle, "i");

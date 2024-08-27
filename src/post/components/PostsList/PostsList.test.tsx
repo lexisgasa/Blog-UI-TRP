@@ -17,6 +17,8 @@ describe("Given the PostsList component", () => {
           author: "",
           date: new Date(),
           content: "",
+          alternativeText: "",
+          imageUrl: "",
         },
         {
           id: "2",
@@ -24,6 +26,8 @@ describe("Given the PostsList component", () => {
           author: "",
           date: new Date(),
           content: "",
+          alternativeText: "",
+          imageUrl: "",
         },
       ];
 
