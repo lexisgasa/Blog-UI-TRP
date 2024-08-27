@@ -10,6 +10,8 @@ export const handlers = [
         title: "el leon de la carcel",
         content: "",
         date: new Date(),
+        alternativeText: "",
+        imageUrl: "",
       },
       {
         id: "2",
@@ -17,6 +19,8 @@ export const handlers = [
         title: "un elefante en la luna",
         content: "",
         date: new Date(),
+        alternativeText: "",
+        imageUrl: "",
       },
     ]);
   }),

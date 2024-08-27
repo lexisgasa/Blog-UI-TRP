@@ -1,17 +1,16 @@
-export interface Post {
+export interface PostBase {
   id: string;
   title: string;
   author: string;
   content: string;
+  imageUrl: string;
+  alternativeText: string;
+}
+
+export interface Post extends PostBase {
   date: Date;
 }
 
-export interface PostDto {
-  id: string;
-  title: string;
-  author: string;
+export interface PostDto extends PostBase {
   date: number;
-  imageUrl: string;
-  alternativeText: string;
-  content: string;
 }
