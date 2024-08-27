@@ -1,6 +1,6 @@
-import { Post } from "../../types";
+import { PostData } from "../../types";
 
 export interface PostClientStructure {
   getPost: () => void;
-  createPost: (post: Post) => void;
+  createPost: (post: PostData) => void;
 }

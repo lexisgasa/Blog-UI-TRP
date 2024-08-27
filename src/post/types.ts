@@ -14,3 +14,5 @@ export interface Post extends PostBase {
 export interface PostDto extends PostBase {
   date: number;
 }
+
+export type PostData = Omit<Post, "id">;
