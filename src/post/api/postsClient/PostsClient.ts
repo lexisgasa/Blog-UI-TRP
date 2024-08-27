@@ -1,8 +1,8 @@
-import { Post, PostDto } from "../../types";
+import { Post, PostDto, PostData as PostData } from "../../types";
 import { PostClientStructure } from "./types";
 
-export class PostClient implements PostClientStructure {
-  getPost = async (): Promise<Post[]> => {
+export class PostsClient implements PostClientStructure {
+  async getPost(): Promise<Post[]> {
     const apiResponse = await fetch(`${import.meta.env.VITE_API_URL}posts`);
 
     const apiPostsDto = (await apiResponse.json()) as PostDto[];
@@ -13,14 +13,12 @@ export class PostClient implements PostClientStructure {
     }));
 
     return posts;
-  };
+  }
 
-  sendPost = async (post: Post): Promise<Post> => {
-    const postDto: PostDto = {
-      ...post,
-      date: post.date.getTime(),
-      imageUrl: "",
-      alternativeText: "",
+  async createPost(postData: PostData): Promise<Post> {
+    const newPostData: Post = {
+      ...postData,
+      id: crypto.randomUUID(),
     };
 
     const response = await fetch(`${import.meta.env.VITE_API_URL}posts`, {
@@ -28,20 +26,15 @@ export class PostClient implements PostClientStructure {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(postDto),
+      body: JSON.stringify(newPostData),
     });
 
     if (!response.ok) {
       throw new Error("There was an error sending the post");
     }
 
-    const returnedPostDto = (await response.json()) as PostDto;
+    const newPost = (await response.json()) as Post;
 
-    const returnedPost: Post = {
-      ...returnedPostDto,
-      date: new Date(returnedPostDto.date),
-    };
-
-    return returnedPost;
-  };
+    return newPost;
+  }
 }
