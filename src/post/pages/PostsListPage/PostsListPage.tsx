@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import PostsList from "../../components/PostsList/PostsList";
-import "./PostsListPage.css";
 import { Post } from "../../types";
 import getPosts from "../../api/getPosts";
+import "./PostsListPage.css";
 
 export const PostsListPage = (): React.ReactElement => {
   const [posts, setPosts] = useState<Post[]>([]);
