@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import PostsList from "../../components/PostsList/PostsList";
 import { Post } from "../../types";
-import getPosts from "../../api/getPosts";
+import { PostsClient } from "../../api/postsClient/PostsClient";
 import "./PostsListPage.css";
 
 export const PostsListPage = (): React.ReactElement => {
+  const postClient = useMemo(() => new PostsClient(), []);
+
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const apiPosts = await getPosts();
+      const apiPosts = await postClient.getPost();
       setPosts(apiPosts);
     };
 
     fetchPosts();
-  }, []);
+  }, [postClient]);
 
   return (
     <>

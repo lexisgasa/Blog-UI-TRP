@@ -6,7 +6,9 @@ describe("Given the PostsList component", () => {
   describe("When it receives two posts with the title 'hola buenas' and 'hasta luego cocodrilo'", () => {
     test("Then it should show 'hola buenas' and 'hasta luego cocodrilo' inside headings", () => {
       const firstPostTitleText = "hola buenas";
+      const firstPostTitleRegex = new RegExp(firstPostTitleText, "i");
       const secondPostTitleText = "hasta luego cocodrilo";
+      const secondPostTitleRegex = new RegExp(secondPostTitleText, "i");
 
       const posts: Post[] = [
         {
@@ -32,10 +34,10 @@ describe("Given the PostsList component", () => {
       render(<PostsList posts={posts} />);
 
       const firstPostTitle = screen.getByRole("heading", {
-        name: firstPostTitleText,
+        name: firstPostTitleRegex,
       });
       const secondPostTitle = screen.getByRole("heading", {
-        name: secondPostTitleText,
+        name: secondPostTitleRegex,
       });
 
       expect(firstPostTitle).toBeInTheDocument();
