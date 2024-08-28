@@ -1,16 +1,25 @@
 import "./NavMenu.css";
+import { NavLink } from "react-router-dom";
 
 const NavMenu = (): React.ReactElement => {
   return (
-    <nav>
-      <ul className="navigation-links">
-        <li className="navigation-links__link navigation-links__link--active">
-          <a href="/posts">Posts</a>
-        </li>
-        <li className="navigation-links__link">
-          <a href="/create-post">Create post</a>
-        </li>
-      </ul>
+    <nav className="navigation-links">
+      <NavLink
+        to={"/posts"}
+        className={({ isActive }) =>
+          `navigation-links__link ${isActive ? "navigation-links__link--active" : ""}`
+        }
+      >
+        Posts
+      </NavLink>
+      <NavLink
+        to={"/create-post"}
+        className={({ isActive }) =>
+          `navigation-links__link ${isActive ? "navigation-links__link--active" : ""}`
+        }
+      >
+        Create post
+      </NavLink>
     </nav>
   );
 };
