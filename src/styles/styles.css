@@ -1,5 +1,6 @@
 :root {
-  --main-color: #1650bb;
+  --main-color: #104093;
+  --secondary-color: #a1eebd;
 }
 
 *,
@@ -51,4 +52,20 @@ button {
   border: none;
   font: inherit;
   cursor: pointer;
+}
+
+input,
+textarea {
+  font: inherit;
+  box-shadow: none;
+  border: 1px solid #00000045;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #000;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
 }
