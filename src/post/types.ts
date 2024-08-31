@@ -12,6 +12,7 @@ export interface Post extends PostBase {
 }
 
 export interface PostDto extends PostBase {
+  _id: string;
   date: number;
 }
 
