@@ -5,11 +5,16 @@ export class PostsClient implements PostClientStructure {
   async getPost(): Promise<Post[]> {
     const apiResponse = await fetch(`${import.meta.env.VITE_API_URL}posts`);
 
-    const apiPostsDto = (await apiResponse.json()) as PostDto[];
+    const apiPostsDto = (await apiResponse.json()) as {
+      posts: PostDto[];
+    };
 
-    const posts = apiPostsDto.map<Post>((apiPostDto) => ({
-      ...apiPostDto,
-      date: new Date(apiPostDto.date),
+    const { posts: postsDto } = apiPostsDto;
+
+    const posts = postsDto.map<Post>((postDto) => ({
+      ...postDto,
+      id: postDto._id,
+      date: new Date(postDto.date),
     }));
 
     return posts;
